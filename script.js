@@ -1,28 +1,40 @@
-document.querySelector("#gridcontainer").addEventListener('dblclick', () => {
-    // console.log('clicked')
-    let boxes = document.querySelectorAll('.grid-items');
-    for (box in boxes) {
-        // console.log(box)
-        boxes[box].style.display = 'block';
-    }
+const route1 = document.querySelector("#routeone"),
+  route2 = document.querySelector("#routetwo"),
+  route3 = document.querySelector("#routethree"),
+  route4 = document.querySelector("#routefour");
 
-})
+document.querySelector("#gridcontainer").addEventListener("dblclick", () => {
+  // console.log('clicked')
+  let boxes = document.querySelectorAll(".grid-items");
+  boxes.forEach(box => {
+    box.style.display = "block";
+  });
+});
 
-document.querySelector(".item-one").addEventListener('dblclick', () => {
-    // console.log("clicked one")
-    let route1 = document.createElement('div')
-    route1.className = "route1";
+document.querySelector(".item-one").addEventListener("click", () => {
+  route1.style.display = "block";
+  route2.style.display = "none";
+  route3.style.display = "none";
+  route4.style.display = "none";
+});
 
-})
+document.querySelector(".item-two").addEventListener("click", () => {
+  route2.style.display = "block";
+  route1.style.display = "none";
+  route3.style.display = "none";
+  route4.style.display = "none";
+});
 
-document.querySelector(".item-two").addEventListener('dblclick', () => {
-    console.log("clicked two")
-})
+document.querySelector(".item-three").addEventListener("click", () => {
+  route3.style.display = "block";
+  route1.style.display = "none";
+  route2.style.display = "none";
+  route4.style.display = "none";
+});
 
-document.querySelector(".item-three").addEventListener('dblclick', () => {
-    console.log("clicked three ")
-})
-
-document.querySelector(".item-four").addEventListener('dblclick', () => {
-    console.log("clicked four")
-})
+document.querySelector(".item-four").addEventListener("click", () => {
+  route4.style.display = "block";
+  route1.style.display = "none";
+  route2.style.display = "none";
+  route3.style.display = "none";
+});
